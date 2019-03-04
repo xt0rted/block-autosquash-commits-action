@@ -1,0 +1,16 @@
+{
+  "name": "block-autosquash-commits-action",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "actions-toolkit": "^1.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.0"
+  }
+}
