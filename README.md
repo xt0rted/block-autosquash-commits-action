@@ -11,8 +11,8 @@ If any commit message in the pull request starts with `fixup!` or `squash!` the 
 ## Usage
 
 ```workflow
-workflow "Pull request" {
-  on = "pull_request"
+workflow "Push" {
+  on = "push"
   resolves = ["Block Autosquash Commits"]
 }
 

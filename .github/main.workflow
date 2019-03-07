@@ -1,9 +1,9 @@
-workflow "Pull request actions" {
+workflow "Push actions" {
   resolves = [
     "gimenete/eslint-action",
     "Block Autosquash Commits",
   ]
-  on = "pull_request"
+  on = "push"
 }
 
 action "gimenete/eslint-action" {
