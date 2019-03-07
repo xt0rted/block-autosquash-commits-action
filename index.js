@@ -11,12 +11,19 @@ class PullRequestChecker {
         const commits = await this.pulls.listCommits(this.context.issue());
         this.log(`Commits for this PR: ${commits.data.length}`);
 
-        const shouldBlock = commits.data.some((commit) =>
-            commit.commit.message.startsWith("fixup!") || commit.commit.message.startsWith("squash!")
-        );
-        this.log(`Should block: ${shouldBlock}`);
+        let blockedCommits = 0;
+        for (const commit of commits.data) {
+            const isAutosquash = commit.commit.message.startsWith("fixup!") || commit.commit.message.startsWith("squash!");
 
-        return !shouldBlock;
+            if (isAutosquash) {
+                this.log.info(`Commit ${commit.sha} is an autosquash commit: ${commit.url}`);
+
+                blockedCommits++;
+            }
+        }
+        this.log(`Commits to block: ${blockedCommits}`)
+
+        return blockedCommits;
     }
 }
 

@@ -11,9 +11,9 @@ const prChecker = new PullRequestChecker(context, pulls, repos, log);
 prChecker.go()
     .then((result) =>
     {
-        if (result){
+        if (result === 0){
             exit.success("No autosquash commits found");
         } else {
-            exit.failure("Found autosquash commits");
+            exit.failure(`${result} commit(s) need to be squashed`);
         }
     });
