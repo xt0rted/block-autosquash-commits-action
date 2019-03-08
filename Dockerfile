@@ -4,7 +4,7 @@ LABEL "name"="block-autosquash-commits-action"
 
 # Labels for GitHub to read the action
 LABEL "com.github.actions.name"="Block Autosquash Commits"
-LABEL "com.github.actions.description"="Blocks merging pull requests containing commits prefixed with fixup! or squash!"
+LABEL "com.github.actions.description"="Prevent merging pull requests that contain commit messages prefixed with fixup! or squash!"
 LABEL "com.github.actions.icon"="alert-circle"
 LABEL "com.github.actions.color"="red"
 
