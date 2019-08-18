@@ -1,6 +1,7 @@
 FROM node:11-alpine
 
 LABEL "name"="block-autosquash-commits-action"
+LABEL "version"="1.0.0"
 
 # Labels for GitHub to read the action
 LABEL "com.github.actions.name"="Block Autosquash Commits"
