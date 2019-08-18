@@ -1,0 +1,9 @@
+name: "Block Autosquash Commits"
+description: "Prevent merging pull requests that contain commit messages prefixed with fixup! or squash!"
+author: "xt0rted"
+branding:
+  icon: "alert-circle"
+  color: "Red"
+runs:
+  using: "docker"
+  image: "Dockerfile"

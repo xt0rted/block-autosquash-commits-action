@@ -1,19 +1,5 @@
 FROM node:12-alpine
 
-LABEL "name"="block-autosquash-commits-action"
-LABEL "version"="1.1.0"
-
-# Labels for GitHub to read the action
-LABEL "com.github.actions.name"="Block Autosquash Commits"
-LABEL "com.github.actions.description"="Prevent merging pull requests that contain commit messages prefixed with fixup! or squash!"
-LABEL "com.github.actions.icon"="alert-circle"
-LABEL "com.github.actions.color"="red"
-
-# Labels for GitHub to publish the action
-LABEL "repository"="https://github.com/xt0rted/block-autosquash-commits-action"
-LABEL "homepage"="https://github.com/xt0rted/block-autosquash-commits-action"
-LABEL "maintainer"="Brian Surowiec"
-
 # Copy the package.json and package-lock.json
 COPY package*.json ./
 
