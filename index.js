@@ -8,7 +8,7 @@ class PullRequestChecker {
 
     async go()
     {
-        const commits = await this.pulls.listCommits(this.context.issue());
+        const commits = await this.pulls.listCommits(this.context.issue);
 
         this.log(`Number of commits in the pull request: ${commits.data.length}`);
 

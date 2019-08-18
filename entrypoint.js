@@ -4,7 +4,7 @@ const PullRequestChecker = require(".");
 const { context, exit, github: {
     pulls,
     repos
-}, log } = new Toolkit();
+}, log } = new Toolkit({ secrets: ["GITHUB_TOKEN"] });
 
 const prChecker = new PullRequestChecker(context, pulls, repos, log);
 
