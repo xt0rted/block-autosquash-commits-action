@@ -1,0 +1,17 @@
+on: pull_request
+
+name: Pull requests
+
+jobs:
+  blockAutosquashCommits:
+    name: Block Autosquash Commits
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Block Autosquash Commits
+        uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
