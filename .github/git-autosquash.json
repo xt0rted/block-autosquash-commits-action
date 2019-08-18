@@ -4,7 +4,7 @@
       "owner": "git-autosquash",
       "pattern": [
         {
-          "regexp": "^.*\\s+(Commit ([0-9a-f]{5,40}) is an autosquash commit): https:\\/\\/.*$",
+          "regexp": "^(Commit ([0-9a-f]{5,40}) is an autosquash commit): https:\\/\\/.*$",
           "message": 1
         }
       ]
