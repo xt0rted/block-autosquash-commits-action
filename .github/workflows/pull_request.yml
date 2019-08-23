@@ -1,15 +1,16 @@
 on: pull_request
 
-name: Pull requests
+name: Pull Requests
 
 jobs:
-  blockAutosquashCommits:
+  message-check:
     name: Block Autosquash Commits
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout Repo
+        uses: actions/checkout@master
 
       - name: Block Autosquash Commits
         uses: ./
