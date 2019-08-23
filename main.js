@@ -1,22 +1,27 @@
+const { setFailed } = require("@actions/core");
 const { Toolkit } = require("actions-toolkit");
 const { addProblemMatcher } = require("./problemMatcher");
 const PullRequestChecker = require("./pullRequestChecker");
 
 const {
     context,
-    exit,
     github: { pulls, repos }
 } = new Toolkit({ secrets: ["GITHUB_TOKEN"] });
 
-addProblemMatcher("git-autosquash.json");
+async function run() {
+    try {
+        addProblemMatcher("git-autosquash.json");
 
-const prChecker = new PullRequestChecker(context, pulls, repos);
+        const result = await new PullRequestChecker(context, pulls, repos).go();
 
-prChecker.go()
-    .then((result) => {
         if (result === 0) {
-            exit.success("No autosquash commits found");
+            console.log("No autosquash commits found");
         } else {
-            exit.failure(`${result} commit(s) need to be squashed`);
+            setFailed(`${result} commit(s) need to be squashed`);
         }
-    });
+    } catch (error) {
+        setFailed(error.message);
+    }
+}
+
+run();
