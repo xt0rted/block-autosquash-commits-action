@@ -9,5 +9,5 @@ RUN npm ci --only=production
 # Copy the rest of your action's code
 COPY . .
 
-# Run `node /entrypoint.js`
-ENTRYPOINT [ "node", "/entrypoint.js" ]
+# Run `node /main.js`
+ENTRYPOINT [ "node", "/main.js" ]
