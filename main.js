@@ -1,6 +1,6 @@
 const { Toolkit } = require("actions-toolkit");
+const { addProblemMatcher } = require("./problemMatcher");
 const PullRequestChecker = require("./pullRequestChecker");
-const path = require("path");
 
 const {
     context,
@@ -8,10 +8,9 @@ const {
     github: { pulls, repos }
 } = new Toolkit({ secrets: ["GITHUB_TOKEN"] });
 
-const prChecker = new PullRequestChecker(context, pulls, repos);
+addProblemMatcher("git-autosquash.json");
 
-const matchersPath = path.join(__dirname, ".github");
-console.log(`::[add-matcher]${path.join(matchersPath, "git-autosquash.json")}`);
+const prChecker = new PullRequestChecker(context, pulls, repos);
 
 prChecker.go()
     .then((result) => {
