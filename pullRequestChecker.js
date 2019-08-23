@@ -1,13 +1,18 @@
+const {
+    context,
+    GitHub,
+} = require("@actions/github");
+
 class PullRequestChecker {
-    constructor(context, pulls, repos) {
-        this.context = context;
-        this.pulls = pulls;
-        this.repos = repos;
+    constructor(repoToken) {
+        this.client = new GitHub(repoToken);
     }
 
-    async go()
-    {
-        const commits = await this.pulls.listCommits(this.context.issue);
+    async process() {
+        const commits = await this.client.pulls.listCommits({
+            ...context.repo,
+            pull_number: context.issue.number,
+        });
 
         console.log(`Number of commits in the pull request: ${commits.data.length}`);
 
