@@ -13,5 +13,5 @@ jobs:
 
       - name: Block Autosquash Commits
         uses: ./
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
