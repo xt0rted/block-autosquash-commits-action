@@ -22,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout
-
       - name: Block Autosquash Commits
         uses: xt0rted/block-autosquash-commits-action@master
         with:
