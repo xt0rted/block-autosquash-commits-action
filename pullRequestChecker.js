@@ -15,7 +15,7 @@ class PullRequestChecker {
             pull_number: context.issue.number,
         });
 
-        console.log(`Number of commits in the pull request: ${commits.data.length}`);
+        debug(`${commits.data.length} commits in the pull request`);
 
         let blockedCommits = 0;
         for (const commit of commits.data) {
@@ -27,9 +27,10 @@ class PullRequestChecker {
                 blockedCommits++;
             }
         }
-        console.log(`Commits to block: ${blockedCommits}`)
 
-        return blockedCommits;
+        if (blockedCommits) {
+            throw Error(`${blockedCommits} commit(s) need to be squashed`);
+        }
     }
 }
 
