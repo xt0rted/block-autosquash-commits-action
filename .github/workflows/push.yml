@@ -1,0 +1,30 @@
+on: push
+
+name: Push actions
+
+jobs:
+  eslint:
+    name: ESLint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - run: node --version
+
+      - run: npm --version
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: ESLint
+        uses: xt0rted/eslint-action@d9bd6dd0a116fc40c6d7a478c856eefd63bd4d07
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 # Block Autosquash Commits Action
 
-![badge](https://action-badges.now.sh/xt0rted/block-autosquash-commits-action) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=xt0rted/block-autosquash-commits-action)](https://dependabot.com)
+![badge](https://github.com/xt0rted/block-autosquash-commits-action/workflows/Push%20actions/badge.svg) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=xt0rted/block-autosquash-commits-action)](https://dependabot.com)
 
 A Github Action to prevent merging pull requests containing [autosquash](https://git-scm.com/docs/git-rebase#git-rebase---autosquash) commit messages.
 
@@ -10,16 +10,25 @@ If any commit message in the pull request starts with `fixup!` or `squash!` the 
 
 ## Usage
 
-```workflow
-workflow "Pull requests" {
-  on = "pull_request"
-  resolves = ["Block Autosquash Commits"]
-}
+```yaml
+on: pull_request
 
-action "Block Autosquash Commits" {
-  uses = "xt0rted/block-autosquash-commits-action@master"
-  secrets = ["GITHUB_TOKEN"]
-}
+name: Pull Requests
+
+jobs:
+  message-check:
+    name: Block Autosquash Commits
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout
+
+      - name: Block Autosquash Commits
+        uses: ./
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 You'll also need to add a [required status check](https://help.github.com/en/articles/enabling-required-status-checks) rule for your action to block merging if it detects any `fixup!` or `squash!` commits.
