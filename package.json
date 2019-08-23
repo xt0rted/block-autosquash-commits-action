@@ -1,7 +1,7 @@
 {
   "name": "block-autosquash-commits-action",
   "private": true,
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "lint": "eslint ./",
     "test": "echo \"Error: no test specified\" && exit 1"
