@@ -1,3 +1,4 @@
+const { debug, error } = require("@actions/core");
 const {
     context,
     GitHub,
@@ -21,7 +22,7 @@ class PullRequestChecker {
             const isAutosquash = commit.commit.message.startsWith("fixup!") || commit.commit.message.startsWith("squash!");
 
             if (isAutosquash) {
-                console.log(`Commit ${commit.sha} is an autosquash commit: ${commit.url}`);
+                error(`Commit ${commit.sha} is an autosquash commit: ${commit.url}`);
 
                 blockedCommits++;
             }

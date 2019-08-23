@@ -1,12 +1,9 @@
 const { getInput, setFailed } = require("@actions/core");
 
-const { addProblemMatcher } = require("./problemMatcher");
 const PullRequestChecker = require("./pullRequestChecker");
 
 async function run() {
     try {
-        addProblemMatcher("git-autosquash.json");
-
         var result = await new PullRequestChecker(
             getInput("repo-token", { required: true })
         ).go();
