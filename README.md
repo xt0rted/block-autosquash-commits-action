@@ -22,11 +22,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout
-
       - name: Block Autosquash Commits
-        uses: ./
+        uses: xt0rted/block-autosquash-commits-action@master
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
