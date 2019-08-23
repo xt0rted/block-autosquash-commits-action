@@ -15,7 +15,7 @@ class PullRequestChecker {
             pull_number: context.issue.number,
         });
 
-        debug(`${commits.data.length} commits in the pull request`);
+        debug(`${commits.data.length} commit(s) in the pull request`);
 
         let blockedCommits = 0;
         for (const commit of commits.data) {
