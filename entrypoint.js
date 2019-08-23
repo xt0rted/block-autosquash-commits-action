@@ -11,7 +11,7 @@ const {
 const prChecker = new PullRequestChecker(context, pulls, repos);
 
 const matchersPath = path.join(__dirname, ".github");
-console.log(`##[add-matcher]${path.join(matchersPath, "git-autosquash.json")}`);
+console.log(`::[add-matcher]${path.join(matchersPath, "git-autosquash.json")}`);
 
 prChecker.go()
     .then((result) => {
