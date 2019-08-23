@@ -1,5 +1,5 @@
 const { Toolkit } = require("actions-toolkit");
-const PullRequestChecker = require(".");
+const PullRequestChecker = require("./pullRequestChecker");
 const path = require("path");
 
 const {
