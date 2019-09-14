@@ -12,6 +12,6 @@
     "@actions/github": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "^6.3.0"
+    "eslint": "^6.4.0"
   }
 }
