@@ -1,6 +1,7 @@
 # Block Autosquash Commits Action
 
-![badge](https://github.com/xt0rted/block-autosquash-commits-action/workflows/Push%20actions/badge.svg) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=xt0rted/block-autosquash-commits-action)](https://dependabot.com)
+[![CI](https://github.com/xt0rted/block-autosquash-commits-action/workflows/CI/badge.svg)](https://github.com/xt0rted/block-autosquash-commits-action/actions?query=workflow%3ACI)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=xt0rted/block-autosquash-commits-action)](https://dependabot.com)
 
 A Github Action to prevent merging pull requests containing [autosquash](https://git-scm.com/docs/git-rebase#git-rebase---autosquash) commit messages.
 
