@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2.0.0
 
       - name: Block Autosquash Commits
         uses: ./
