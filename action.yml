@@ -11,5 +11,5 @@ inputs:
     required: true
 
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "node12"
+  image: "dist/main.js"
