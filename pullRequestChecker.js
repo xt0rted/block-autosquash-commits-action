@@ -1,12 +1,12 @@
 const { debug, error } = require("@actions/core");
 const {
     context,
-    GitHub,
+    getOctokit,
 } = require("@actions/github");
 
 class PullRequestChecker {
     constructor(repoToken) {
-        this.client = new GitHub(repoToken);
+        this.client = getOctokit(repoToken);
     }
 
     async process() {
