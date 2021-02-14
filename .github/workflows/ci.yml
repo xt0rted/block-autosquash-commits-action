@@ -7,24 +7,18 @@ on:
       - main
 
 jobs:
-  eslint:
-    name: ESLint
-
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v2.3.4
 
-      - name: Install Node
+      - name: Install node
         uses: actions/setup-node@v2.1.4
         with:
           node-version: "12.x"
 
-      - name: NPM Install
-        run: npm ci
+      - run: npm ci
 
-      - name: ESLint
-        uses: xt0rted/eslint-action@d9bd6dd0a116fc40c6d7a478c856eefd63bd4d07
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm test
