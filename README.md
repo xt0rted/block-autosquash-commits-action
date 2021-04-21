@@ -29,3 +29,53 @@ jobs:
 ```
 
 You'll also need to add a [required status check](https://help.github.com/en/articles/enabling-required-status-checks) rule for your action to block merging if it detects any `fixup!` or `squash!` commits.
+
+### Control Permissions
+
+If you're repository is using [control permissions](https://github.blog/changelog/2021-04-20-github-actions-control-permissions-for-github_token/) you'll need to set `pull-request: read` on either the workflow or the job.
+
+#### Workflow Config
+
+```yaml
+on: pull_request
+
+name: Pull Request
+
+permissions:
+  pull-requests: read
+
+jobs:
+  message-check:
+    name: Block Autosquash Commits
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Block Autosquash Commits
+        uses: xt0rted/block-autosquash-commits-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+#### Job Config
+
+```yaml
+on: pull_request
+
+name: Pull Request
+
+jobs:
+  message-check:
+    name: Block Autosquash Commits
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: read
+
+    steps:
+      - name: Block Autosquash Commits
+        uses: xt0rted/block-autosquash-commits-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+```
