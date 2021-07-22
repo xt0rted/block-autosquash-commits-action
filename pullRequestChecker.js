@@ -13,6 +13,7 @@ class PullRequestChecker {
         const commits = await this.client.rest.pulls.listCommits({
             ...context.repo,
             pull_number: context.issue.number,
+            per_page: 100,
         });
 
         debug(`${commits.data.length} commit(s) in the pull request`);
