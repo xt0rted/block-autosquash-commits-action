@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## Version 2.2.0
+
 - Bumped `@actions/core` from 1.2.6 to 1.4.0
 - Bumped `@actions/github` from 4.0.0 to 5.0.0
 - Increased the number of commits checked from 30 to 250.
