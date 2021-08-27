@@ -4,7 +4,7 @@ name: Pull Request
 
 jobs:
   message-check:
-    name: Block Autosquash Commits
+    name: Block Merge Commits
 
     runs-on: ubuntu-latest
 
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2.3.4
 
-      - name: Block Autosquash Commits
+      - name: Block Merge Commits
         uses: ./
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}

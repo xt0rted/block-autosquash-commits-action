@@ -1,6 +1,6 @@
-name: "Block Autosquash Commits"
-description: "Prevent merging pull requests that contain commit messages prefixed with fixup! or squash!"
-author: "xt0rted"
+name: "Block Merge Commits"
+description: "Prevent merging pull requests that contain merge commits"
+author: "Morishiri"
 branding:
   icon: "alert-circle"
   color: "Red"
