@@ -6,9 +6,9 @@ A Github Action to prevent merging pull requests containing merge commits.
 
 ## How it works
 
-If any commit message in the pull request starts with `fixup!` or `squash!` the check status will be set to `error`.
+If any commit in the pull request is a merge commit, the check status will be set to `error`.
 
->⚠️ GitHub's API only returns the first 250 commits of a PR so if you're working on a really large PR your fixup commits might not be detected.
+>⚠️ GitHub's API only returns the first 250 commits of a PR so if you're working on a really large PR your merge commits might not be detected.
 
 ## Usage
 
