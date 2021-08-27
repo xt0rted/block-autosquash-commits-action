@@ -1,8 +1,8 @@
-# Block Autosquash Commits Action
+# Block Merge Commits Action
 
-[![CI](https://github.com/xt0rted/block-autosquash-commits-action/workflows/CI/badge.svg)](https://github.com/xt0rted/block-autosquash-commits-action/actions?query=workflow%3ACI)
+[![CI](https://github.com/Morishiri/block-merge-commits-action/workflows/CI/badge.svg)](https://github.com/Morishiri/block-merge-commits-action/actions?query=workflow%3ACI)
 
-A Github Action to prevent merging pull requests containing [autosquash](https://git-scm.com/docs/git-rebase#git-rebase---autosquash) commit messages.
+A Github Action to prevent merging pull requests containing merge commits.
 
 ## How it works
 
@@ -19,18 +19,18 @@ name: Pull Requests
 
 jobs:
   message-check:
-    name: Block Autosquash Commits
+    name: Block Merge Commits
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Block Autosquash Commits
-        uses: xt0rted/block-autosquash-commits-action@v2
+      - name: Block Merge Commits
+        uses: Morishiri/block-merge-commits-action@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-You'll also need to add a [required status check](https://help.github.com/en/articles/enabling-required-status-checks) rule for your action to block merging if it detects any `fixup!` or `squash!` commits.
+You'll also need to add a [required status check](https://help.github.com/en/articles/enabling-required-status-checks) rule for your action to block merging if it detects merge commits.
 
 ### Control Permissions
 
@@ -48,13 +48,13 @@ permissions:
 
 jobs:
   message-check:
-    name: Block Autosquash Commits
+    name: Block Merge Commits
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Block Autosquash Commits
-        uses: xt0rted/block-autosquash-commits-action@v2
+      - name: Block Merge Commits
+        uses: Morishiri/block-merge-commits-action@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -68,7 +68,7 @@ name: Pull Request
 
 jobs:
   message-check:
-    name: Block Autosquash Commits
+    name: Block Merge Commits
 
     runs-on: ubuntu-latest
 
@@ -76,8 +76,8 @@ jobs:
       pull-requests: read
 
     steps:
-      - name: Block Autosquash Commits
-        uses: xt0rted/block-autosquash-commits-action@v2
+      - name: Block Merge Commits
+        uses: Morishiri/block-merge-commits-action@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```

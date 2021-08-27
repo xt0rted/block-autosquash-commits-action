@@ -22,18 +22,18 @@ class PullRequestChecker {
         debug(`${commits.length} commit(s) in the pull request`);
 
         let blockedCommits = 0;
-        for (const { commit: { message }, sha, url } of commits) {
-            const isAutosquash = message.startsWith("fixup!") || message.startsWith("squash!");
+        for (const { sha, url, parents } of commits) {
+            const isMergeCommit = parents.length > 1;
 
-            if (isAutosquash) {
-                error(`Commit ${sha} is an autosquash commit: ${url}`);
+            if (isMergeCommit) {
+                error(`Commit ${sha} is an merge commit: ${url}`);
 
                 blockedCommits++;
             }
         }
 
         if (blockedCommits) {
-            throw Error(`${blockedCommits} commit(s) need to be squashed`);
+            throw Error(`${blockedCommits} commit(s) cannot be merged`);
         }
     }
 }
