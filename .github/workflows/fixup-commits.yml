@@ -1,18 +1,18 @@
+name: Block on fixup commits
+
 on: pull_request
 
-name: Pull Request
+permissions:
+  pull-requests: read
 
 jobs:
-  message-check:
-    name: Block Autosquash Commits
-
+  message:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
+      - name: Check out Repo
         uses: actions/checkout@v2.4.0
 
-      - name: Block Autosquash Commits
-        uses: ./
+      - uses: ./
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
