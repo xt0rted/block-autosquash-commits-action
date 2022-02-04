@@ -5,6 +5,7 @@
 - Bumped `@actions/core` from 1.4.0 to 1.10.0
 - Bumped `@actions/github` from 5.0.0 to 5.1.1
 - Bumped `node-fetch` from 2.6.1 to 2.6.7
+- Updated the `repo-token` input so it defaults to `GITHUB_TOKEN`. If you're already using this value you can remove this setting from your workflow.
 
 ## Version 2.2.0
 
