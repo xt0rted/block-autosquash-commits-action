@@ -32,7 +32,7 @@ You'll also need to add a [required status check](https://help.github.com/en/art
 
 ## Token permissions
 
-If your repository is using [control permissions](https://github.blog/changelog/2021-04-20-github-actions-control-permissions-for-github_token/) you'll need to set `pull-request: read` on either the workflow or the job.
+If your repository is using [token permissions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions) you'll need to set `pull-request: read` on either the workflow or the job.
 
 ### Workflow config
 
