@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Bumped `@actions/core` from 1.4.0 to 1.6.0
+- Bumped `node-fetch` from 2.6.1 to 2.6.7
 
 ## Version 2.2.0
 
