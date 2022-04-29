@@ -1,6 +1,7 @@
 # Block Merge Commits Action
 
 [![CI](https://github.com/Morishiri/block-merge-commits-action/workflows/CI/badge.svg)](https://github.com/Morishiri/block-merge-commits-action/actions?query=workflow%3ACI)
+[![CodeQL](https://github.com/Morishiri/block-merge-commits-action/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/Morishiri/block-merge-commits-action/actions/workflows/codeql-analysis.yml)
 
 A Github Action to prevent merging pull requests containing merge commits.
 
