@@ -3,7 +3,7 @@
 ## Unreleased
 
 - Bumped `@actions/core` from 1.4.0 to 1.8.2
-- Bumped `@actions/github` from 5.0.0 to 5.0.1
+- Bumped `@actions/github` from 5.0.0 to 5.0.3
 - Bumped `node-fetch` from 2.6.1 to 2.6.7
 
 ## Version 2.2.0
