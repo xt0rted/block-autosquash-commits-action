@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:16-alpine
 
 # Copy the package.json and package-lock.json
 COPY package*.json ./
