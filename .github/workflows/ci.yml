@@ -22,9 +22,8 @@ jobs:
           node-version: '16'
 
       - name: NPM Install
+        # to install eslint
         run: npm ci
 
       - name: ESLint
-        uses: xt0rted/eslint-action@d9bd6dd0a116fc40c6d7a478c856eefd63bd4d07
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run lint
