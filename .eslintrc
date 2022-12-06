@@ -4,10 +4,11 @@
         "es6": true
     },
     "extends": "eslint:recommended",
+    "ignorePatterns": ["dist/index.js"],
     "parserOptions": {
         "ecmaVersion": 2018
     },
-    "rules": {
+  "rules": {
         "array-bracket-spacing": [ "error", "never" ],
         "arrow-body-style": [ "error", "as-needed" ],
         "arrow-parens": [ "error", "always" ],

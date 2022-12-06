@@ -14,17 +14,16 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2.0.0
+        uses: actions/checkout@v3
 
       - name: Install Node
-        uses: actions/setup-node@v1.3.0
+        uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
+          node-version: '16'
 
       - name: NPM Install
+        # to install eslint
         run: npm ci
 
       - name: ESLint
-        uses: xt0rted/eslint-action@d9bd6dd0a116fc40c6d7a478c856eefd63bd4d07
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run lint

@@ -4,14 +4,16 @@
   "main": "main.js",
   "scripts": {
     "lint": "eslint ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "ncc build main.js"
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^3.0.0"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
   },
   "devDependencies": {
-    "eslint": "^7.11.0"
+    "eslint": "^8.28.0",
+    "@vercel/ncc": "^0.34.0"
   }
 }
