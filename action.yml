@@ -1,14 +1,18 @@
 name: "Block Autosquash Commits"
+
 description: "Prevent merging pull requests that contain commit messages prefixed with fixup! or squash!"
+
 author: "xt0rted"
+
 branding:
   icon: "alert-circle"
-  color: "Red"
+  color: "red"
 
 inputs:
   repo-token:
-    description: "Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}"
+    description: "GITHUB_TOKEN token or a repo scoped PAT"
     required: true
+    default: ${{ github.token }}
 
 runs:
   using: "docker"
